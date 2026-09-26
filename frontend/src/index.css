@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --hg-bg: #07090e;
+  --hg-bg-2: #0f172a;
+  --hg-border: #1e293b;
+  --hg-cyan: #0ea5e9;
+  --hg-low: #10b981;
+  --hg-moderate: #f59e0b;
+  --hg-high: #ef4444;
+}
+
+* {
+  border-color: var(--hg-border);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--hg-bg);
+  color: #cbd5e1;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(14, 165, 233, 0.12), transparent 70%),
+    linear-gradient(to right, rgba(30, 41, 59, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.35) 1px, transparent 1px);
+  background-size: 100% 100%, 3.5rem 3.5rem, 3.5rem 3.5rem;
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.35);
+  color: #f8fafc;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.font-display {
+  font-family: "Chivo", "IBM Plex Sans", sans-serif;
+}
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.glass {
+  @apply rounded-lg border border-slate-800/80 bg-slate-900/70 shadow-2xl shadow-black/40 backdrop-blur-xl;
+}
+.caption {
+  @apply font-mono text-[11px] uppercase tracking-[0.18em] text-slate-500;
+}
+.hairline {
+  @apply border-t border-slate-800/80;
+}
+
+.risk-LOW {
+  color: var(--hg-low);
+}
+.risk-MODERATE {
+  color: var(--hg-moderate);
+}
+.risk-HIGH {
+  color: var(--hg-high);
+}
+
+@keyframes hg-pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+@keyframes hg-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hg-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes hg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-up {
+  animation: hg-fade-up 0.5s ease-out both;
+}
+.pulse-dot {
+  position: relative;
+}
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: hg-pulse-ring 1.6s ease-out infinite;
+}
+.scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, rgba(14, 165, 233, 0.18), transparent);
+  animation: hg-scan 1.8s linear infinite;
+}
+.radar {
+  position: relative;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.radar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from 0deg, transparent 0 300deg, rgba(14, 165, 233, 0.6) 360deg);
+  animation: hg-spin 1.4s linear infinite;
+}
+
+/* Leaflet dark theming */
+.leaflet-container {
+  background: #0b1120;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+.hg-dark-tiles {
+  filter: invert(1) hue-rotate(190deg) brightness(0.62) contrast(1.15) saturate(0.35);
+}
+.leaflet-control-attribution {
+  background: rgba(7, 9, 14, 0.7) !important;
+  color: #475569 !important;
+  font-size: 10px;
+}
+.leaflet-control-attribution a {
+  color: #64748b !important;
+}
+.leaflet-tooltip.hg-tooltip {
+  background: rgba(7, 9, 14, 0.92);
+  border: 1px solid #1e293b;
+  color: #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  backdrop-filter: blur(12px);
+}
+.leaflet-tooltip.hg-tooltip::before {
+  border-top-color: #1e293b;
+}
+.hg-zone-label {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #f8fafc;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.hg-hospital-marker {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  background: #0ea5e9;
+  color: #07090e;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  border: 2px solid #e0f2fe;
+  box-shadow: 0 0 14px rgba(14, 165, 233, 0.7);
+}
+.hg-amb-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: 2px solid #07090e;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+}
+.hg-amb-AVAILABLE {
+  background: #38bdf8;
+}
+.hg-amb-ON_ROUTE {
+  background: #a78bfa;
+}
+.hg-amb-ASSIGNED {
+  background: #fb7185;
+}
+
+.recharts-default-tooltip {
+  background: rgba(7, 9, 14, 0.95) !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}

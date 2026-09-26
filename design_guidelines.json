@@ -1,0 +1,227 @@
+{
+  "project_name": "HEALTHGRID",
+  "tagline": "Detect Earlier. Respond Smarter. Protect the City.",
+  "app_type": "dashboard",
+  "archetype": "THE PERFORMANCE PRO / COMMAND CENTER FUTURISM",
+  "design_philosophy": {
+    "core_concept": "High-density Tactical Command Center UI for urban public health & emergency response intelligence.",
+    "anti_patterns": [
+      "NO standard light/white generic medical site look",
+      "NO rounded soft friendly consumer app aesthetic",
+      "NO transparent backgrounds on dropdowns, modals or sticky overlays without proper backdrop blur and solid tint",
+      "NO center-aligned text blocks for telemetry or metrics",
+      "NO generic placeholder icons or missing test IDs"
+    ],
+    "key_principles": [
+      "Tactical Dark Aesthetics: Deep slate/obsidian (#07090E) with precise hairline grid borders (#1E293B)",
+      "Strict Semantic Risk Palette: LOW=Emerald (#10B981), MODERATE=Amber (#F59E0B), HIGH=Rose/Red (#EF4444)",
+      "Information Density & Modular Bento Grid: Monospaced numeric readouts, micro sparklines, real-time pulse dots",
+      "Explainability First: AI flags must feature transparent attribution factors and confidence metrics",
+      "Dynamic Spatial Map Integration: Dark-themed Leaflet canvas with custom polygon zones and pulse markers"
+    ]
+  },
+  "typography": {
+    "headline_font": "Chivo, JetBrains Mono, sans-serif",
+    "body_font": "Inter, system-ui, sans-serif",
+    "mono_font": "JetBrains Mono, Source Code Pro, monospace",
+    "scale": {
+      "h1": "text-3xl sm:text-4xl font-extrabold tracking-tight font-mono",
+      "h2": "text-xl sm:text-2xl font-bold tracking-tight",
+      "h3": "text-lg font-semibold tracking-wide uppercase text-slate-300 font-mono",
+      "h4": "text-base font-semibold text-slate-200",
+      "body": "text-sm text-slate-300 leading-relaxed",
+      "caption": "text-xs font-mono text-slate-400 uppercase tracking-wider"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#07090E",
+      "secondary": "#0F172A",
+      "card_surface": "rgba(15, 23, 42, 0.75)",
+      "card_surface_hover": "rgba(30, 41, 59, 0.85)",
+      "overlay": "rgba(7, 9, 14, 0.85)"
+    },
+    "borders": {
+      "subtle": "#1E293B",
+      "highlight": "#334155",
+      "active_cyan": "#0EA5E9"
+    },
+    "brand_accents": {
+      "primary_cyan": "#0EA5E9",
+      "electric_blue": "#38BDF8",
+      "neon_violet": "#8B5CF6"
+    },
+    "risk_status": {
+      "low": {
+        "text": "#10B981",
+        "bg": "rgba(16, 185, 129, 0.12)",
+        "border": "rgba(16, 185, 129, 0.4)",
+        "badge": "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
+      },
+      "moderate": {
+        "text": "#F59E0B",
+        "bg": "rgba(245, 158, 11, 0.12)",
+        "border": "rgba(245, 158, 11, 0.4)",
+        "badge": "bg-amber-500/10 text-amber-400 border-amber-500/30"
+      },
+      "high": {
+        "text": "#EF4444",
+        "bg": "rgba(239, 68, 68, 0.15)",
+        "border": "rgba(239, 68, 68, 0.5)",
+        "badge": "bg-rose-500/15 text-rose-400 border-rose-500/40 animate-pulse"
+      }
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-slate-900/80 border border-slate-800/80 shadow-2xl shadow-black/50",
+    "glowing_card_alert": "border border-rose-500/50 bg-rose-950/20 shadow-[0_0_25px_rgba(239,68,68,0.2)]",
+    "glowing_card_cyan": "border border-cyan-500/40 bg-slate-900/90 shadow-[0_0_20px_rgba(14,165,233,0.15)]",
+    "grid_background": "bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]",
+    "radar_sweep_effect": "relative overflow-hidden before:absolute before:inset-0 before:bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(14,165,233,0.2)_360deg)] before:animate-[spin_4s_linear_infinite]"
+  },
+  "pages_and_navigation": {
+    "sidebar_routes": [
+      {
+        "id": "command-center",
+        "label": "Command Center",
+        "icon": "LayoutDashboard",
+        "description": "High-level citywide operational status, KPI cards, real-time alert feed, map quick view"
+      },
+      {
+        "id": "zones-map",
+        "label": "Zones & Map Intelligence",
+        "icon": "MapPin",
+        "description": "Full interactive Leaflet map with 6 risk-coded zone polygons, signal cards, spatial cluster analysis"
+      },
+      {
+        "id": "hospitals-ambulances",
+        "label": "Hospitals & Fleet",
+        "icon": "Activity",
+        "description": "Hospital bed capacities, ICU/ER load status, active ambulance telemetry and routing"
+      },
+      {
+        "id": "alerts-response",
+        "label": "Alerts & Explainability",
+        "icon": "ShieldAlert",
+        "description": "Detailed AI anomaly breakdown, feature attribution breakdown, automated response execution"
+      },
+      {
+        "id": "analytics",
+        "label": "Predictive Analytics",
+        "icon": "TrendingUp",
+        "description": "Recharts syndromic surveillance trends, disease propagation models, demographic vulnerability"
+      },
+      {
+        "id": "how-it-works",
+        "label": "Architecture & Privacy",
+        "icon": "Cpu",
+        "description": "Multi-source ingestion pipeline data-flow, differential privacy framework details"
+      }
+    ]
+  },
+  "layout_structure": {
+    "header": {
+      "brand_title": "HEALTHGRID",
+      "sub_title": "City Health Intelligence Platform",
+      "status_badge": "● SYSTEM OPERATIONAL",
+      "synthetic_badge": "SYNTHETIC DEMO DATA",
+      "time_display": "Live UTC Timestamp",
+      "controls": ["Simulate Data Button", "Reset Simulation Button", "Live Alert Bell"]
+    },
+    "zones": [
+      {
+        "id": "ZONE-1",
+        "name": "Downtown Metro Core",
+        "coords": [37.7749, -122.4194],
+        "default_risk": "LOW",
+        "population": "185,000",
+        "key_metric": "Wastewater Viral Load: Baseline (12 copies/mL)"
+      },
+      {
+        "id": "ZONE-2",
+        "name": "North Harbor Industrial District",
+        "coords": [37.795, -122.405],
+        "default_risk": "LOW",
+        "population": "92,000",
+        "key_metric": "OTC Pharma Sales: Normal"
+      },
+      {
+        "id": "ZONE-3",
+        "name": "Western Suburbs & Residential",
+        "coords": [37.76, -122.46],
+        "default_risk": "MODERATE",
+        "population": "240,000",
+        "key_metric": "School Absenteeism: +8.4% WoW"
+      },
+      {
+        "id": "ZONE-4",
+        "name": "Eastside Tech Corridor & Innovation Hub",
+        "coords": [37.75, -122.39],
+        "default_risk": "HIGH",
+        "population": "145,000",
+        "key_metric": "ER Respiratory Admissions: +312% Anomaly (Flagged)"
+      },
+      {
+        "id": "ZONE-5",
+        "name": "South Bay Transit Hub",
+        "coords": [37.72, -122.42],
+        "default_risk": "MODERATE",
+        "population": "110,000",
+        "key_metric": "Syndromic Call Volume: +18.2%"
+      },
+      {
+        "id": "ZONE-6",
+        "name": "Highland Valley Heights",
+        "coords": [37.74, -122.48],
+        "default_risk": "LOW",
+        "population": "78,000",
+        "key_metric": "All Signals: Nominal"
+      }
+    ]
+  },
+  "key_components_to_build": {
+    "kpi_cards": "4 metric blocks: Citywide Risk Score (e.g., 78/100 HIGH), Active Anomaly Signals (3 Active), Hospital ICU Capacity (84.2% Occupied), Emergency Fleet Response ETA (6.4 min avg).",
+    "leaflet_map": "Leaflet Map centered on city, with 6 geojson/polygon zones color-filled according to risk state (green/orange/red), interactive popups on hover/click, hospital markers, ambulance moving units with radar pulse.",
+    "simulation_controller": "Primary button 'SIMULATE INCOMING DATA' trigger with loading state 'Analyzing incoming signals...' that updates zone risk states, charts, and alert cards; and 'RESET SIMULATION' button.",
+    "alert_card": "ABNORMAL HEALTH PATTERN DETECTED highlight banner featuring Zone 4, risk severity level HIGH, key triggers, time detected, and quick action trigger button.",
+    "explainability_panel": "WHY WAS ZONE 4 FLAGGED? panel containing SHAP-style feature importance bars (ER ILI Admissions 42%, Wastewater SARS-CoV-2/Flu-A ratio 28%, School Absences 18%, OTC Antipyretic Sales 12%), model confidence 92.4%.",
+    "spatial_cluster_panel": "Geospatial dispersion analysis card displaying spillover risk percentages to neighboring Zone 3 and Zone 5.",
+    "hospital_network_cards": "Cards showing 3 major city hospitals (e.g. St. Jude General, City Memorial, Valley Health) with live ICU bed counts, ER wait times, ventilator availability, and triage redirect status.",
+    "ambulance_intelligence": "Telemetry feed for 4 mobile units (MED-101, MED-104, MED-202, MED-309) showing location, patient triage score, destination hospital, dynamic reroute suggestion.",
+    "response_plan_panel": "Automated AI containment playbook with interactive checkboxes, action execution buttons ('Trigger Level-2 Triage', 'Notify CDC Portal', 'Deploy Mobile Diagnostic Van').",
+    "recharts_analytics": "3 interactive Recharts components: 1. 24-Hour ER Admissions vs Model Prediction (AreaChart), 2. Wastewater Viral Concentration Trajectory across 6 Zones (LineChart), 3. Syndromic Breakdown by Triage Category (BarChart).",
+    "data_flow_visualization": "Interactive 5-stage pipeline diagram ('HOW HEALTHGRID WORKS'): Ingestion Telemetry -> AI Anomaly Engine -> Spatial Cluster -> Explainability Model -> Emergency Dispatch.",
+    "privacy_note": "Footer/Sidebar banner detailing Differential Privacy (ε=0.5) and HIPAA/GDPR compliance."
+  },
+  "media": {
+    "image_urls": {
+      "city_map_background": "https://images.unsplash.com/photo-1657901945977-e41b4091586b?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "server_cluster": "https://images.unsplash.com/photo-1648565726114-cfb73eb46340?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "city_skyline_night": "https://images.unsplash.com/photo-1550458564-1c62225e810f?crop=entropy&cs=srgb&fm=jpg&q=85"
+    }
+  },
+  "data_testing_rules": {
+    "mandatory_data_testid": true,
+    "naming_convention": "kebab-case describing exact action or container",
+    "examples": [
+      "data-testid=\"sidebar-nav-command-center\"",
+      "data-testid=\"simulate-data-button\"",
+      "data-testid=\"reset-simulation-button\"",
+      "data-testid=\"kpi-risk-score\"",
+      "data-testid=\"alert-card-abnormal-health\"",
+      "data-testid=\"zone-detail-panel-zone-4\"",
+      "data-testid=\"explainability-why-flagged-zone-4\"",
+      "data-testid=\"execute-response-plan-button\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. Do NOT build a light, friendly medical website. This is a high-density, dark-mode CITY HEALTH COMMAND CENTER dashboard.",
+    "2. Ensure all interactive components include explicit data-testid attributes.",
+    "3. Enforce strict risk color rules: LOW = Emerald/Green (#10B981), MODERATE = Amber/Orange (#F59E0B), HIGH = Rose/Red (#EF4444).",
+    "4. Use Leaflet with Dark CartoDB basemap for the city map component and overlay interactive GeoJSON/polygon zones.",
+    "5. Provide multi-page sidebar navigation supporting all 6 routes specified in sidebar_routes.",
+    "6. Include the big 'SIMULATE INCOMING DATA' and 'RESET SIMULATION' buttons, with loading state 'Analyzing incoming signals...'.",
+    "7. Include Recharts analytics charts and Explainability 'WHY WAS ZONE 4 FLAGGED?' panel.",
+    "8. Make sure all overlays, popups, dropdowns, and sticky panels have non-transparent solid dark backgrounds with backdrop-blur."
+  ]
+}
